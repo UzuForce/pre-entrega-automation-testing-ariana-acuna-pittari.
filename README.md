@@ -38,3 +38,4 @@ pytest
 - Reporte HTML: `reports/reporte.html`
 - Log de ejecución: `reports/ejecucion.log`
 - Capturas automáticas de los tests que fallan: `reports/fallo_*.png`
+# pre-entrega-automation-testing-ariana-acuna-pittari.
