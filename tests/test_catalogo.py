@@ -13,7 +13,7 @@ def test_ordenar_por_precio(driver):
     # Los precios deben quedar en orden ascendente
     textos = driver.find_elements(By.CLASS_NAME, "inventory_item_price")
     precios = [float(t.text.replace("$", "")) for t in textos]
-    assert precios == sorted(precios), f"Los precios no están ordenados: {precios}"
+    assert precios == sorted(precios)
 
 
 def test_detalle_de_producto(driver):
@@ -27,4 +27,4 @@ def test_detalle_de_producto(driver):
     # Verificar que se abre la página del producto con el mismo nombre
     nombre_detalle = esperar_visible(driver, (By.CLASS_NAME, "inventory_details_name")).text
     assert "/inventory-item.html" in driver.current_url, "No se abrió el detalle del producto"
-    assert nombre_detalle == nombre, f"Se esperaba '{nombre}' y se encontró '{nombre_detalle}'"
+    assert nombre_detalle == nombre

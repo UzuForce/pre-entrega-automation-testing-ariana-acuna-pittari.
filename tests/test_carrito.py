@@ -13,7 +13,7 @@ def test_carrito(driver):
 
     # 2) Verificar que el contador del carrito sea 1
     contador = esperar_visible(driver, (By.CLASS_NAME, "shopping_cart_badge")).text
-    assert contador == "1", f"El contador del carrito es {contador} (se esperaba 1)"
+    assert contador == "1"
 
     # 3) Ir al carrito y confirmar el producto
     driver.find_element(By.CLASS_NAME, "shopping_cart_link").click()
@@ -29,7 +29,7 @@ def test_agregar_dos_productos(driver):
     botones[0].click()
     botones[1].click()
     contador = esperar_visible(driver, (By.CLASS_NAME, "shopping_cart_badge")).text
-    assert contador == "2", f"El contador del carrito es {contador} (se esperaba 2)"
+    assert contador == "2"
 
 
 def test_quitar_producto(driver):

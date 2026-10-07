@@ -14,16 +14,16 @@ def intentar_login(driver, usuario, password):
 
 def test_login_password_incorrecta(driver):
     mensaje = intentar_login(driver, "standard_user", "clave_incorrecta")
-    assert "do not match any user" in mensaje, f"Mensaje inesperado: {mensaje}"
+    assert "do not match any user" in mensaje
     assert "/inventory.html" not in driver.current_url, "No debería haber entrado al inventario"
 
 
 def test_login_usuario_bloqueado(driver):
     mensaje = intentar_login(driver, "locked_out_user", "secret_sauce")
-    assert "locked out" in mensaje, f"Mensaje inesperado: {mensaje}"
+    assert "locked out" in mensaje
     assert "/inventory.html" not in driver.current_url, "No debería haber entrado al inventario"
 
 
 def test_login_campos_vacios(driver):
     mensaje = intentar_login(driver, "", "")
-    assert "Username is required" in mensaje, f"Mensaje inesperado: {mensaje}"
+    assert "Username is required" in mensaje

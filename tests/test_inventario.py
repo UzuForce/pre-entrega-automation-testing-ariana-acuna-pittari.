@@ -8,7 +8,7 @@ def test_inventario(driver):
 
     # 1) Validar título de la página de inventario
     titulo = driver.find_element(By.CLASS_NAME, "title").text
-    assert titulo == "Products", f"Título inesperado: {titulo}"
+    assert titulo == "Products"
 
     # 2) Verificar que exista al menos un producto
     productos = driver.find_elements(By.CLASS_NAME, "inventory_item")

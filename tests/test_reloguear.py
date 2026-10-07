@@ -21,4 +21,4 @@ def test_acceso_sin_login(driver):
     driver.get("https://www.saucedemo.com/inventory.html")
 
     mensaje = esperar_visible(driver, (By.CSS_SELECTOR, "[data-test='error']")).text
-    assert "only access '/inventory.html' when you are logged in" in mensaje, f"Mensaje inesperado: {mensaje}"
+    assert "only access '/inventory.html' when you are logged in" in mensaje
